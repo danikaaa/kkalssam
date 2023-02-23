@@ -1,0 +1,15 @@
+.input-box {
+    background-color: #ddd;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(100% - 50px);
+}
+
+input[type="text"]{
+    width: calc(100% - 20px);
+    display: inline-block;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+}
