@@ -13,3 +13,7 @@ input[type="text"]{
     border: none;
     background-color: transparent;
 }
+
+.none{
+    display: none !important;
+}
