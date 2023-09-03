@@ -1,0 +1,19 @@
+.ContentList{
+
+    .content-item{
+        padding: 10px 0;
+
+        .price{
+            text-align: right;
+        }
+        .users{
+            text-align: right;
+        }
+    }
+
+    .content-button{
+        padding-top: 10px;
+        text-align: center;
+    }
+
+}

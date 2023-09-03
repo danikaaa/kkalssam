@@ -1,4 +1,5 @@
 import UserList from "../components/UserList";
+import '../styles/UserTemplate.scss';
 
 const UserTemplate = () => {
 
