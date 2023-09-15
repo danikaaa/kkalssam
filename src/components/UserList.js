@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BsPlusCircleDotted, BsPersonFill } from "react-icons/bs";
+import { BsPlusCircleDotted } from "react-icons/bs";
 
 const UserList = () => {
 
@@ -13,7 +13,7 @@ const UserList = () => {
         <div className="UserList">
             <div className="title">함께하는 사람</div>
             <ul>
-                {users.map(user => (<li className="user-icon"><BsPersonFill />{user.name}</li>))}
+                {users.map(user => (<li className="user-icon">{user.name}</li>))}
                 <div><BsPlusCircleDotted /></div>
             </ul>
         </div>

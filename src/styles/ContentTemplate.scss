@@ -1,16 +1,33 @@
 .ContentList{
 
+    
+
     .content-item{
         padding: 10px 0;
 
         .price{
             text-align: right;
+            
         }
         .users{
             text-align: right;
+            font-size: 14px;
+            color: #666;
         }
     }
 
+
+    .content-item:nth-child(n){
+        border-bottom: 1px solid #ddd;
+    }
+    .content-item:first-child{
+        border-bottom: 1px solid #ddd;
+    }
+    .content-item:last-child{
+        border-bottom: none;
+    }
+
+    
     .content-button{
         padding-top: 10px;
         text-align: center;

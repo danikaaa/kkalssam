@@ -6,8 +6,12 @@ import '../styles/ContentTemplate.scss';
 const ContentList = () => {
 
     const [contents, setContents] = useState([
-        {idx: 1, product: '아이스크림', price:2000, users:['수연','다니카']}
+        {idx: 1, product: '아이스크림', price:2000, users:['수연','다니카']},
+        {idx: 2, product: '떡볶이', price:5000, users:['수연']},
+        {idx: 3, product: '어묵' , price:1000, users:['수연','다니카']}
     ]);
+
+
 
     return (
         <div className="ContentList">
