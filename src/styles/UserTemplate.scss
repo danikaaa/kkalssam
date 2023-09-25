@@ -1,4 +1,7 @@
 .UserList{
+    .none{
+        display: none;
+    }
 
     ul{
         display: flex;
@@ -17,6 +20,25 @@
     svg{
         font-size: 2.5rem;
         color: #6089BF;
+    }
+
+
+    .user_input_box{
+        margin: 10px 0;
+        display: flex;
+
+
+        input[type="text"]{
+            border: none;
+            background-color: #C2D7F257;
+            width: calc(100% - 20%);
+        }
+
+        .add_btn{
+            flex: 1;
+            text-align: center;
+        }
+
     }
 
 }

@@ -8,14 +8,23 @@ const UserList = () => {
         { id : 2, name : '다니카'},
     ]);
 
+    const userOnToggle = () => {
+        document.getElementById('user_input_box').classList.toggle('none');
+    };
 
     return(
         <div className="UserList">
             <div className="title">함께하는 사람</div>
             <ul>
                 {users.map(user => (<li className="user-icon">{user.name}</li>))}
-                <div><BsPlusCircleDotted /></div>
+                <div className="user_add" onClick={userOnToggle}><BsPlusCircleDotted /></div>
             </ul>
+            <div id="user_input_box" className="none">
+                <div className="user_input_box">
+                    <input type="text" placeholder="ex) 홍길동"></input>
+                    <div className="add_btn">추가</div>
+                </div>
+            </div>
         </div>
     );
 };
