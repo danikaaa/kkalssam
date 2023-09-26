@@ -1,6 +1,8 @@
 .ContentList{
 
-    
+    .none{
+        display: none;;
+    }
 
     .content-item{
         padding: 10px 0;
@@ -33,4 +35,28 @@
         text-align: center;
     }
 
+    .content_input_box{
+        margin: 10px 0;
+
+        
+        .sub_content_list{
+            margin: 10px 0;
+
+            .sub_title{
+                padding: 5px 0;
+            }
+
+            input[type="text"]{
+                border: none;
+                background-color: #C2D7F257;
+                width: calc(100% - 20%);
+            }
+        }
+
+        .add_btn{
+            text-align: center;
+        }
+        
+
+    }
 }

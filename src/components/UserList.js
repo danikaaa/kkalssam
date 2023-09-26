@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState } from "react";
 import { BsPlusCircleDotted } from "react-icons/bs";
 
 const UserList = () => {
@@ -8,8 +8,20 @@ const UserList = () => {
         { id : 2, name : '다니카'},
     ]);
 
+    // user add 클릭시 토글
     const userOnToggle = () => {
         document.getElementById('user_input_box').classList.toggle('none');
+    };
+    
+    const userAdd = () =>  {
+        console.log('user add');
+        
+        
+    };
+
+    const onChange  = (e) => {
+        
+       
     };
 
     return(
@@ -21,8 +33,8 @@ const UserList = () => {
             </ul>
             <div id="user_input_box" className="none">
                 <div className="user_input_box">
-                    <input type="text" placeholder="ex) 홍길동"></input>
-                    <div className="add_btn">추가</div>
+                    <input type="text" name="username" placeholder="ex) 홍길동" onChange={onChange}></input>
+                    <div className="add_btn" onClick={userAdd}>추가</div>
                 </div>
             </div>
         </div>
