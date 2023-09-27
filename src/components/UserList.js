@@ -1,28 +1,38 @@
-import {useState } from "react";
+import {useState, useCallback, useRef } from "react";
 import { BsPlusCircleDotted } from "react-icons/bs";
 
 const UserList = () => {
 
     const [users, setUsers] = useState([
         { id : 1, name : '수연'},
-        { id : 2, name : '다니카'},
+        { id : 2, name : '나미'},
     ]);
+
+    const nextId = useRef(4);
+
+    const onInsert = useCallback(name => {
+    const user = {id: nextId.current, name};
+    setUsers(users.concat(user));
+    nextId.current += 1;
+    },[users]);
+
+    const [value, setValue] = useState('');
+    const onChange = useCallback(e => {
+        setValue(e.target.value);
+    }, []);
+
+    const userAdd = useCallback(e =>{
+        onInsert(value);
+        setValue('');
+        e.preventDefault(); // 새로고침방지용 
+    },[onInsert,value]);
+
 
     // user add 클릭시 토글
     const userOnToggle = () => {
         document.getElementById('user_input_box').classList.toggle('none');
     };
     
-    const userAdd = () =>  {
-        console.log('user add');
-        
-        
-    };
-
-    const onChange  = (e) => {
-        
-       
-    };
 
     return(
         <div className="UserList">

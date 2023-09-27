@@ -4,7 +4,10 @@
     }
 
     ul{
-        display: flex;
+        width: 100%;
+        height: 50px;
+        overflow: scroll;
+        display: -webkit-inline-box;
     }
     .user-icon{
         color: #6089BF;
