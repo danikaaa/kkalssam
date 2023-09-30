@@ -6,6 +6,10 @@
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
+    .none{
+        display: none;
+    }
+
     .title{
         font-size: 1.3rem;
         margin-bottom: 10px;
@@ -15,6 +19,25 @@
         list-style: none;
         margin: 0;
         padding: 0;
+    }
+
+    .user_ul{
+        width: 100%;
+        height: 50px;
+        overflow: scroll;
+        display: -webkit-inline-box;
+    }
+
+    .user-icon{
+        color: #6089BF;
+        margin-right: 10px;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid #6089BF;
+        border-radius: 50%;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        text-align: center;
+        line-height: 2.4rem;
     }
 }
 

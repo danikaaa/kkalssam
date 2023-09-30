@@ -44,7 +44,7 @@ const ContentList = ({contents, userlist}) => {
                         <input type="text" placeholder="ex) 4000"></input>원
                     </div>
                     <div className="sub_content_list">
-                        {userlist.map(user => (<li className="user-icon">{user.name}</li>))}
+                        <ul className="user_ul">{userlist.map(user => (<li className="user-icon"><input type="checkbox" value={user.name} id={user.id}/><label for={user.id}>{user.name}</label></li>))}</ul>
                     </div>
                     <div className="add_btn" onClick={contentAdd}>추가</div>
                 </div>

@@ -26,7 +26,7 @@ const UserList = ({users, onInsert}) => {
     return(
         <div className="UserList">
             <div className="title">함께하는 사람</div>
-            <ul>
+            <ul className="user_ul">
                 {users.map(user => (<li className="user-icon">{user.name}</li>))}
                 <div className="user_add" onClick={userOnToggle}><BsPlusCircleDotted /></div>
             </ul>

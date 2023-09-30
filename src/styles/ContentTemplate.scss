@@ -1,9 +1,5 @@
 .ContentList{
 
-    .none{
-        display: none;;
-    }
-
     .content-item{
         padding: 10px 0;
 
@@ -51,6 +47,19 @@
                 background-color: #C2D7F257;
                 width: calc(100% - 20%);
             }
+
+            input[type="checkbox"]{
+                display: none;
+            }
+
+            input[type="checkbox"]:checked + label{
+                background-color: #6089BF;
+                color: #fff;
+                display: block;
+                border-radius: 50%;
+                padding: 1px 0;
+            }
+
         }
 
         .add_btn{
