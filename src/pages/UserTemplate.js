@@ -1,11 +1,12 @@
 import UserList from "../components/UserList";
 import '../styles/UserTemplate.scss';
 
-const UserTemplate = () => {
+const UserTemplate = ({users, onInsert}) => {
 
     return (
         <div className="Template">
-            <UserList></UserList>
+            <UserList users={users} onInsert={onInsert}></UserList>
+            
         </div>
         
     );

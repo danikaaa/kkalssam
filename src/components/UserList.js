@@ -1,21 +1,10 @@
-import {useState, useCallback, useRef } from "react";
+import {useState, useCallback} from "react";
 import { BsPlusCircleDotted } from "react-icons/bs";
 
-const UserList = () => {
+const UserList = ({users, onInsert}) => {
 
-    const [users, setUsers] = useState([
-        { id : 1, name : '수연'},
-        { id : 2, name : '나미'},
-    ]);
-
-    const nextId = useRef(4);
-
-    const onInsert = useCallback(name => {
-    const user = {id: nextId.current, name};
-    setUsers(users.concat(user));
-    nextId.current += 1;
-    },[users]);
-
+    const {id, name} = users;
+    
     const [value, setValue] = useState('');
     const onChange = useCallback(e => {
         setValue(e.target.value);

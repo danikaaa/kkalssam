@@ -3,13 +3,12 @@ import { BsPlusCircleDotted } from "react-icons/bs";
 import { BiWon } from "react-icons/bi";
 import '../styles/ContentTemplate.scss';
 
-const ContentList = () => {
+const ContentList = ({contents, userlist}) => {
 
-    const [contents, setContents] = useState([
-        {idx: 1, product: '아이스크림', price:2000, users:['수연','다니카']},
-        {idx: 2, product: '떡볶이', price:5000, users:['수연']},
-        {idx: 3, product: '어묵' , price:1000, users:['수연','다니카']}
-    ]);
+    const {idx, product, price, users} = contents;
+
+    const {id, name} = userlist;
+
 
 
      // content add 클릭시 토글
@@ -43,6 +42,9 @@ const ContentList = () => {
                     <div className="sub_content_list">
                         <div className="sub_title">가격</div>
                         <input type="text" placeholder="ex) 4000"></input>원
+                    </div>
+                    <div className="sub_content_list">
+                        {userlist.map(user => (<li className="user-icon">{user.name}</li>))}
                     </div>
                     <div className="add_btn" onClick={contentAdd}>추가</div>
                 </div>

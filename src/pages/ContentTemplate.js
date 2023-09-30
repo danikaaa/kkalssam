@@ -1,11 +1,11 @@
 import ContentList from "../components/ContentList";
 
 
-const ContentTemplate = () => {
+const ContentTemplate = ({contents, userlist}) => {
 
     return (
         <div className="Template">
-            <ContentList />
+            <ContentList contents={contents} userlist={userlist}/>
         </div>
     );
 
