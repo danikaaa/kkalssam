@@ -54,7 +54,7 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
                         <input type="text" name="product" placeholder="ex) 아이스아메리카노" onChange={onChange}></input>
                     </div>
                     <div className="sub_content_list">
-                        <div className="sub_title">가격</div>
+                        <div className="sub_title">금액</div>
                         <input type="text" name="price" placeholder="ex) 4000" onChange={onChange}></input>원
                     </div>
                     <div className="sub_content_list">
