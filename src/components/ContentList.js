@@ -1,31 +1,37 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { BsPlusCircleDotted } from "react-icons/bs";
 import { BiWon } from "react-icons/bi";
 import '../styles/ContentTemplate.scss';
 
-const ContentList = ({contents, userlist}) => {
+const ContentList = ({contents, userlist, onContentInsert}) => {
 
     const {idx, product, price, users} = contents;
 
     const {id, name} = userlist;
 
 
+    const [value, setValue] = useState('');
+    const onChange = useCallback(e => {
+        setValue(e.target.value);
+    }, []);
+
+    const contentAdd = useCallback(e =>{
+        onContentInsert(value);
+        setValue('');
+        e.preventDefault(); // 새로고침방지용 
+    },[onContentInsert,value]);
 
      // content add 클릭시 토글
      const contentOnToggle = () => {
         document.getElementById('content_input_box').classList.toggle('none');
     };
 
-    const contentAdd = () => {
-        console.log('content add');
-    }
-
     return (
         <div className="ContentList">
             <div className="title">내역</div>
             <ul>
                 {contents.map(content => (
-                    <li className="content-item">
+                    <li className="content-item" key={content.idx}>
                         <div className="product">{content.product}</div>
                         <div className="price"><BiWon /> {content.price}</div>
                         <div className="users">{content.users}</div>
@@ -37,14 +43,14 @@ const ContentList = ({contents, userlist}) => {
                 <div className="content_input_box">
                     <div className="sub_content_list">
                         <div className="sub_title">내용</div>
-                        <input type="text" placeholder="ex) 아이스아메리카노"></input>
+                        <input type="text" name="product" placeholder="ex) 아이스아메리카노"></input>
                     </div>
                     <div className="sub_content_list">
                         <div className="sub_title">가격</div>
-                        <input type="text" placeholder="ex) 4000"></input>원
+                        <input type="text" name="price" placeholder="ex) 4000"></input>원
                     </div>
                     <div className="sub_content_list">
-                        <ul className="user_ul">{userlist.map(user => (<li className="user-icon"><input type="checkbox" value={user.name} id={user.id}/><label for={user.id}>{user.name}</label></li>))}</ul>
+                        <ul className="user_ul">{userlist.map(user => (<li className="user-icon" key={user.idx}><input type="checkbox" name="users" value={user.name} id={user.idx}/><label htmlFor={user.idx}>{user.name}</label></li>))}</ul>
                     </div>
                     <div className="add_btn" onClick={contentAdd}>추가</div>
                 </div>

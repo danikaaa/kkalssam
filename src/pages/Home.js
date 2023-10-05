@@ -9,14 +9,12 @@ const Home = () =>{
 
     // user list start
     const [users, setUsers] = useState([
-        { id : 1, name : '수연'},
-        { id : 2, name : '나미'},
+        { idx : 1, name : '수연'},
+        { idx : 2, name : '나미'},
     ]);
-
     const nextId = useRef(4);
-
-    const onInsert = useCallback(name => {
-        const user = {id: nextId.current, name};
+    const onUserInsert = useCallback(name => {
+        const user = {idx: nextId.current, name};
         setUsers(users.concat(user));
         nextId.current += 1;
     },[users]);
@@ -29,13 +27,19 @@ const Home = () =>{
         {idx: 2, product: '떡볶이', price:5000, users:['수연']},
         {idx: 3, product: '어묵' , price:1000, users:['수연','나미']}
     ]);
+
+    const onContentInsert = useCallback(data=>{
+        const content = {idx: nextId.current, product: data.product, users:data.users};
+        setContents(contents.concat(content));
+        nextId.current += 1;
+    },[contents]);
     //contents end
 
 
     return (
         <div>
-            <UserTemplate users={users} onInsert={onInsert}/>
-            <ContentTemplate contents={contents} userlist={users}/>
+            <UserTemplate users={users} onUserInsert={onUserInsert}/>
+            <ContentTemplate contents={contents} userlist={users} onContentInsert={onContentInsert}/>
             <Calculate />
         </div>
     );
