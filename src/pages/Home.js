@@ -29,7 +29,7 @@ const Home = () =>{
     ]);
 
     const onContentInsert = useCallback(data=>{
-        const content = {idx: nextId.current, product: data.product, users:data.users};
+        const content = {idx: nextId.current, product: data.product, price: data.price, users:data.users};
         setContents(contents.concat(content));
         nextId.current += 1;
     },[contents]);

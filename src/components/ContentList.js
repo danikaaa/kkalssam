@@ -5,15 +5,23 @@ import '../styles/ContentTemplate.scss';
 
 const ContentList = ({contents, userlist, onContentInsert}) => {
 
-    const {idx, product, price, users} = contents;
+    // const {idx, product, price, users} = contents;
 
-    const {id, name} = userlist;
+    // const {idx, name} = userlist;
 
+    const [value, setValue] = useState({
+        idx: '',
+        product: "",
+        price: "",
+        users: "",
+    });
 
-    const [value, setValue] = useState('');
     const onChange = useCallback(e => {
-        setValue(e.target.value);
-    }, []);
+        setValue({
+            ...value,
+            [e.target.name]: e.target.value,
+        });
+    });
 
     const contentAdd = useCallback(e =>{
         onContentInsert(value);
@@ -43,14 +51,14 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
                 <div className="content_input_box">
                     <div className="sub_content_list">
                         <div className="sub_title">내용</div>
-                        <input type="text" name="product" placeholder="ex) 아이스아메리카노"></input>
+                        <input type="text" name="product" placeholder="ex) 아이스아메리카노" onChange={onChange}></input>
                     </div>
                     <div className="sub_content_list">
                         <div className="sub_title">가격</div>
-                        <input type="text" name="price" placeholder="ex) 4000"></input>원
+                        <input type="text" name="price" placeholder="ex) 4000" onChange={onChange}></input>원
                     </div>
                     <div className="sub_content_list">
-                        <ul className="user_ul">{userlist.map(user => (<li className="user-icon" key={user.idx}><input type="checkbox" name="users" value={user.name} id={user.idx}/><label htmlFor={user.idx}>{user.name}</label></li>))}</ul>
+                        <ul className="user_ul">{userlist.map(user => (<li className="user-icon" key={user.idx}><input type="checkbox" name="users" value={user.name} id={user.idx} onChange={onChange}/><label htmlFor={user.idx}>{user.name}</label></li>))}</ul>
                     </div>
                     <div className="add_btn" onClick={contentAdd}>추가</div>
                 </div>
