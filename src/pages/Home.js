@@ -13,6 +13,7 @@ const Home = () =>{
         { idx : 2, name : '나미'},
     ]);
     const nextId = useRef(4);
+
     const onUserInsert = useCallback(name => {
         const user = {idx: nextId.current, name};
         setUsers(users.concat(user));
@@ -29,6 +30,7 @@ const Home = () =>{
     ]);
 
     const onContentInsert = useCallback(data=>{
+        console.log(data);
         const content = {idx: nextId.current, product: data.product, price: data.price, users:data.users};
         setContents(contents.concat(content));
         nextId.current += 1;
@@ -41,6 +43,8 @@ const Home = () =>{
             <UserTemplate users={users} onUserInsert={onUserInsert}/>
             <ContentTemplate contents={contents} userlist={users} onContentInsert={onContentInsert}/>
             <Calculate />
+        
+    
         </div>
     );
 

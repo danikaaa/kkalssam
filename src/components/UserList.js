@@ -1,36 +1,30 @@
-import {useState, useCallback} from "react";
+import React, { useState, useCallback } from "react";
 import { BsPlusCircleDotted } from "react-icons/bs";
 
-const UserList = ({users, onUserInsert}) => {
+const UserList = ({ users, onUserInsert }) => {
+    const [username, setUsername] = useState('');
 
-    // const {id, name} = users;
-    
-    const [value, setValue] = useState('');
     const onChange = useCallback(e => {
-        setValue(e.target.value);
+        setUsername(e.target.value);
     }, []);
 
-    const userAdd = useCallback(e =>{
-        console.log(e.target.value);
-        onUserInsert(value);
-        setValue('');
-        e.preventDefault(); // 새로고침방지용 
-    },[onUserInsert,value]);
+    const userAdd = useCallback(() => {
+        onUserInsert(username);
+        setUsername('');
+    }, [onUserInsert, username]);
 
-    // enter 시 값 입력
     const onKeyDown = (e) => {
-        if (e.key === 'Enter'){
-            userAdd(e);
+        if (e.key === 'Enter') {
+            e.preventDefault(); // 기본 동작(폼 제출) 방지
+            userAdd();
         }
     }
 
-    // user add 클릭시 토글
     const userOnToggle = () => {
         document.getElementById('user_input_box').classList.toggle('none');
     };
-    
 
-    return(
+    return (
         <div className="UserList">
             <div className="title">함께하는 사람</div>
             <ul className="user_ul">

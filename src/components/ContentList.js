@@ -9,25 +9,50 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
 
     // const {idx, name} = userlist;
 
-    const [value, setValue] = useState({
+    const initialFormState = {
         idx: '',
-        product: "",
-        price: "",
-        users: "",
-    });
+        product: '',
+        price: '',
+        users: [],
+    };
+    
+    const [value, setValue] = useState(initialFormState);
+
 
     const onChange = useCallback(e => {
         setValue({
             ...value,
             [e.target.name]: e.target.value,
         });
-    });
+    }, [setValue, value]);
 
-    const contentAdd = useCallback(e =>{
+
+    
+    const contentAdd = useCallback(e => {
         onContentInsert(value);
-        setValue('');
-        e.preventDefault(); // 새로고침방지용 
-    },[onContentInsert,value]);
+        setValue(initialFormState); // 초기 상태로 리셋
+        e.preventDefault(); // 새로고침 방지용
+
+    }, [onContentInsert, value]);
+
+
+
+    const handleUserCheckboxChange = useCallback(e => {
+        const { checked, value } = e.target;
+        if (checked) {
+            setValue(prevValue => ({
+                ...prevValue,
+                users: [...prevValue.users, value],
+            }));
+        } else {
+            setValue(prevValue => ({
+                ...prevValue,
+                users: prevValue.users.filter(user => user !== value),
+            }));
+        }
+    }, [setValue]);
+
+
 
      // content add 클릭시 토글
      const contentOnToggle = () => {
@@ -58,7 +83,7 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
                         <input type="text" name="price" placeholder="ex) 4000" onChange={onChange}></input>원
                     </div>
                     <div className="sub_content_list">
-                        <ul className="user_ul">{userlist.map(user => (<li className="user-icon" key={user.idx}><input type="checkbox" name="users" value={user.name} id={user.idx} onChange={onChange}/><label htmlFor={user.idx}>{user.name}</label></li>))}</ul>
+                        <ul className="user_ul">{userlist.map(user => (<li className="user-icon" key={user.idx}><input type="checkbox" name="users" value={user.name} id={user.idx} onChange={handleUserCheckboxChange}/><label htmlFor={user.idx}>{user.name}</label></li>))}</ul>
                     </div>
                     <div className="add_btn" onClick={contentAdd}>추가</div>
                 </div>
