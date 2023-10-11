@@ -30,7 +30,6 @@ const Home = () =>{
     ]);
 
     const onContentInsert = useCallback(data=>{
-        console.log(data);
         const content = {idx: nextId.current, product: data.product, price: data.price, users:data.users};
         setContents(contents.concat(content));
         nextId.current += 1;
@@ -42,7 +41,7 @@ const Home = () =>{
         <div>
             <UserTemplate users={users} onUserInsert={onUserInsert}/>
             <ContentTemplate contents={contents} userlist={users} onContentInsert={onContentInsert}/>
-            <Calculate />
+            <Calculate  userlist={users} contents={contents} />
         
     
         </div>

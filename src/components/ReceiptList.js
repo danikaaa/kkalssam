@@ -1,5 +1,5 @@
 
-const ReceiptList = () => {
+const ReceiptList = ({userlist}) => {
 
     return (
         <div className="Template">

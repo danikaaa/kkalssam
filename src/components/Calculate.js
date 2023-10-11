@@ -1,17 +1,24 @@
 // 계산 컴포넌트
 import { BsArrowRight } from "react-icons/bs";
-import { Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
-const Calculate = () => {
+const Calculate = ({userlist, contents}) => {
 
+    const navigate = useNavigate();
+
+    const onClick = () => {
+
+        navigate('/Receipt',{state:{
+            userlist: userlist,
+            contents: contents
+        }});
+
+    };
     return (
-        <Link to={"Receipt"}>
-            <button className="calculate-button" >
-                계산 <BsArrowRight />
-            </button>
-        </Link>
+        <button className="calculate-button" onClick={onClick}>
+            계산 <BsArrowRight />
+        </button>
     );
 };
 
