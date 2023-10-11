@@ -1,34 +1,38 @@
 
-const ReceiptList = ({userlist}) => {
+const ReceiptList = ({receipts}) => {
 
     return (
-        <div className="Template">
-            <div className="user_name">나미</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>내용</th>
-                        <th>금액</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>아이스아메리카노</td>
-                        <td>2000</td>
-                    </tr>
-                    <tr>
-                        <td>떡볶이</td>
-                        <td>3500</td>
-                    </tr>
+        receipts.map(receipt => (
+            <div className="Template" key={receipt.idx}>
+                <div className="user_name">{receipt.name}</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>내용</th>
+                            <th>금액</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {receipt.products.map((product, idx) => (
+                        <tr key={idx}>
+                            <td>{product.product}</td>
+                            <td>{product.price}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                    <tfoot>
                     <tr className="total_price">
                         <td>합계</td>
                         <td>5500</td>
                     </tr>
-                </tbody>
-                
-            </table>
+                    </tfoot>
+                    
 
-        </div>
+                </table>
+
+            </div>
+        ))
+
     );
 };
 

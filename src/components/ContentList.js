@@ -5,9 +5,6 @@ import '../styles/ContentTemplate.scss';
 
 const ContentList = ({contents, userlist, onContentInsert}) => {
 
-    // const {idx, product, price, users} = contents;
-
-    // const {idx, name} = userlist;
 
     const initialFormState = {
         idx: '',
