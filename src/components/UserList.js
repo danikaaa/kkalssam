@@ -13,6 +13,7 @@ const UserList = ({ users, onUserInsert }) => {
         setUsername('');
     }, [onUserInsert, username]);
 
+
     const onKeyDown = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault(); // 기본 동작(폼 제출) 방지

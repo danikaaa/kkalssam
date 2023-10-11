@@ -23,7 +23,7 @@ const ReceiptList = ({receipts}) => {
                     <tfoot>
                     <tr className="total_price">
                         <td>합계</td>
-                        <td>5500</td>
+                        <td>{receipt.totalPrice}</td>
                     </tr>
                     </tfoot>
                     
