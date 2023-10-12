@@ -16,14 +16,14 @@ const ReceiptList = ({receipts}) => {
                     {receipt.products.map((product, idx) => (
                         <tr key={idx}>
                             <td>{product.product}</td>
-                            <td>{product.price}</td>
+                            <td>{product.price.toLocaleString()}</td>
                         </tr>
                     ))}
                     </tbody>
                     <tfoot>
                     <tr className="total_price">
                         <td>합계</td>
-                        <td>{receipt.totalPrice}</td>
+                        <td>{receipt.totalPrice.toLocaleString()}</td>
                     </tr>
                     </tfoot>
                     
