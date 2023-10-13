@@ -1,8 +1,10 @@
+$mainColor :#6089BF;
+
 .UserList{
 
     svg{
         font-size: 2.5rem;
-        color: #6089BF;
+        color: $mainColor;
     }
 
 
@@ -15,6 +17,8 @@
             border: none;
             background-color: #C2D7F257;
             width: calc(100% - 20%);
+            padding: 5px;
+            border-radius: 5px;
         }
 
         .add_btn{

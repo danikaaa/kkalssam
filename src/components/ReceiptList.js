@@ -1,3 +1,4 @@
+import { BiWon } from "react-icons/bi";
 
 const ReceiptList = ({receipts}) => {
 
@@ -15,15 +16,15 @@ const ReceiptList = ({receipts}) => {
                     <tbody>
                     {receipt.products.map((product, idx) => (
                         <tr key={idx}>
-                            <td>{product.product}</td>
-                            <td>{product.price.toLocaleString()}</td>
+                            <td className="product">{product.product}</td>
+                            <td className="price"><BiWon /> {product.price.toLocaleString()}</td>
                         </tr>
                     ))}
                     </tbody>
                     <tfoot>
                     <tr className="total_price">
                         <td>합계</td>
-                        <td>{receipt.totalPrice.toLocaleString()}</td>
+                        <td className="price"><BiWon /> {receipt.totalPrice.toLocaleString()}</td>
                     </tr>
                     </tfoot>
                     

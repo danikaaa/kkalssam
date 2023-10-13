@@ -64,7 +64,7 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
                     <li className="content-item" key={content.idx}>
                         <div className="product">{content.product}</div>
                         <div className="price"><BiWon /> {content.price.toLocaleString()}</div>
-                        <div className="users">{content.users}</div>
+                        <div className="users">{content.users.join(', ')}</div>
                     </li>
                 ))}
             </ul>

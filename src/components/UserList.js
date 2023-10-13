@@ -34,7 +34,7 @@ const UserList = ({ users, onUserInsert }) => {
             </ul>
             <div id="user_input_box" className="none">
                 <div className="user_input_box">
-                    <input type="text" name="username" placeholder="ex) 홍길동" onChange={onChange} onKeyDown={onKeyDown}></input>
+                    <input type="text" name="username" id="username" placeholder="ex) 홍길동" onChange={onChange} onKeyDown={onKeyDown}></input>
                     <div className="add_btn" onClick={userAdd}>추가</div>
                 </div>
             </div>

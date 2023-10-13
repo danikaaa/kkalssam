@@ -1,5 +1,8 @@
+$mainColor :#6089BF;
+
 table{
     width: 100%;
+    margin: 0.7rem 0;
 
     th{
         border-bottom: 1px solid #d9d9d9;
@@ -7,7 +10,7 @@ table{
 
     .total_price{
         td{
-            border-top: 1px solid #6089BF;
+            border-top: 1px solid $mainColor;
             font-weight: 600;
         }
     }

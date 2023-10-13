@@ -8,11 +8,8 @@ import { useState, useCallback, useRef } from "react";
 const Home = () =>{
 
     // user list start
-    const [users, setUsers] = useState([
-        { idx : 1, name : '수연'},
-        { idx : 2, name : '나미'},
-    ]);
-    const nextId = useRef(4);
+    const [users, setUsers] = useState([]);
+    const nextId = useRef(1);
 
     const onUserInsert = useCallback(name => {
         const user = {idx: nextId.current, name};
@@ -24,9 +21,7 @@ const Home = () =>{
 
     // contents start
     const [contents, setContents] = useState([
-        {idx: 1, product: '아이스크림', price:2000, users:['수연','나미']},
-        {idx: 2, product: '떡볶이', price:5000, users:['수연']},
-        {idx: 3, product: '어묵' , price:1000, users:['수연','나미']}
+    
     ]);
 
     const onContentInsert = useCallback(data=>{
