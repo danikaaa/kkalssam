@@ -9,6 +9,11 @@ const Calculate = ({userlist, contents}) => {
 
     const onClick = () => {
 
+        if(userlist.length === 0 && contents.length === 0){
+            alert("등록이 되지 않아 계산을 진행 할 수 없습니다.");
+            return false;
+        }
+
         navigate('/Receipt',{state:{
             userlist: userlist,
             contents: contents

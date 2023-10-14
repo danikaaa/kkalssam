@@ -9,14 +9,21 @@ const UserList = ({ users, onUserInsert }) => {
     }, []);
 
     const userAdd = useCallback(() => {
-        onUserInsert(username);
-        setUsername('');
+
+        if(document.getElementById('username').value === ''){
+            alert('사용자를 입력하세요.');
+        }else{
+            onUserInsert(username);
+            setUsername('');
+        }
+
+        
     }, [onUserInsert, username]);
 
 
     const onKeyDown = (e) => {
         if (e.key === 'Enter') {
-            e.preventDefault(); // 기본 동작(폼 제출) 방지
+            e.preventDefault();
             userAdd();
         }
     }

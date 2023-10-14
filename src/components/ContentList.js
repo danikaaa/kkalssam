@@ -26,10 +26,21 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
 
     
     const contentAdd = useCallback(e => {
-        onContentInsert(value);
-        setValue(initialFormState); // 초기 상태로 리셋
-        e.preventDefault(); // 새로고침 방지용
-
+    
+        console.log(value.users.length);
+        if(document.getElementById('product').value === ''){
+            alert("내역을 입력하세요.");
+        }else if(document.getElementById('price').value === ''){
+            alert("금액을 입력하세요.");
+        }else if(value.users.length === 0){
+            alert("사용자를 선택해주세요.");
+        }else{
+            onContentInsert(value);
+            setValue(initialFormState); // 초기 상태로 리셋
+            e.preventDefault(); // 새로고침 방지용
+    
+        }
+        
     }, [onContentInsert, value]);
 
 
@@ -73,11 +84,11 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
                 <div className="content_input_box">
                     <div className="sub_content_list">
                         <div className="sub_title">내용</div>
-                        <input type="text" name="product" placeholder="ex) 아이스아메리카노" onChange={onChange}></input>
+                        <input type="text" name="product" id="product" placeholder="ex) 아이스아메리카노" onChange={onChange}></input>
                     </div>
                     <div className="sub_content_list">
                         <div className="sub_title">금액</div>
-                        <input type="text" name="price" placeholder="ex) 4000" onChange={onChange}></input><span className="text_won">원</span>
+                        <input type="text" name="price" id="price" placeholder="ex) 4000" onChange={onChange}></input><span className="text_won">원</span>
                     </div>
                     <div className="sub_content_list">
                         <ul className="user_ul">{userlist.map(user => (<li className="user-icon" key={user.idx}><input type="checkbox" name="users" value={user.name} id={user.idx} onChange={handleUserCheckboxChange}/><label htmlFor={user.idx}>{user.name}</label></li>))}</ul>
