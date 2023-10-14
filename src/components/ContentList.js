@@ -63,7 +63,7 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
                 {contents.map(content => (
                     <li className="content-item" key={content.idx}>
                         <div className="product">{content.product}</div>
-                        <div className="price"><BiWon /> {content.price.toLocaleString()}</div>
+                        <div className="price"><span className="won"><BiWon /></span> {content.price.toLocaleString()}</div>
                         <div className="users">{content.users.join(', ')}</div>
                     </li>
                 ))}
@@ -77,7 +77,7 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
                     </div>
                     <div className="sub_content_list">
                         <div className="sub_title">금액</div>
-                        <input type="text" name="price" placeholder="ex) 4000" onChange={onChange}></input>원
+                        <input type="text" name="price" placeholder="ex) 4000" onChange={onChange}></input><span className="text_won">원</span>
                     </div>
                     <div className="sub_content_list">
                         <ul className="user_ul">{userlist.map(user => (<li className="user-icon" key={user.idx}><input type="checkbox" name="users" value={user.name} id={user.idx} onChange={handleUserCheckboxChange}/><label htmlFor={user.idx}>{user.name}</label></li>))}</ul>

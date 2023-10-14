@@ -1,11 +1,26 @@
 $mainColor :#6089BF;
 
+
+.user_icon{
+    color: $mainColor;
+    font-size: 25px;
+    position: relative;
+    top: 7px;
+
+}
+
 table{
     width: 100%;
     margin: 0.7rem 0;
+    border-collapse: collapse;
 
     th{
         border-bottom: 1px solid #d9d9d9;
+        padding: 8px 10px;
+    }
+
+    td{
+        padding: 8px 10px;
     }
 
     .total_price{
@@ -13,5 +28,6 @@ table{
             border-top: 1px solid $mainColor;
             font-weight: 600;
         }
+
     }
 }
