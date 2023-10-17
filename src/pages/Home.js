@@ -37,8 +37,6 @@ const Home = () =>{
             <UserTemplate users={users} onUserInsert={onUserInsert}/>
             <ContentTemplate contents={contents} userlist={users} onContentInsert={onContentInsert}/>
             <Calculate  userlist={users} contents={contents} />
-        
-    
         </div>
     );
 
