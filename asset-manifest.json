@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kkalssam/static/css/main.599a4bc2.css",
+    "main.js": "/kkalssam/static/js/main.b831d6f1.js",
+    "static/js/787.9702f48d.chunk.js": "/kkalssam/static/js/787.9702f48d.chunk.js",
+    "index.html": "/kkalssam/index.html",
+    "main.599a4bc2.css.map": "/kkalssam/static/css/main.599a4bc2.css.map",
+    "main.b831d6f1.js.map": "/kkalssam/static/js/main.b831d6f1.js.map",
+    "787.9702f48d.chunk.js.map": "/kkalssam/static/js/787.9702f48d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.599a4bc2.css",
+    "static/js/main.b831d6f1.js"
+  ]
+}
