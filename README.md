@@ -20,23 +20,22 @@
 개인별 총 금액 += 음식별 가격
 
 
-🗓️ 작업기간 : 2023.09.~2023.10
+**🗓️ 작업기간** : 2023.09.~2023.10
 
-👨‍💻 투입인원 : 1명
+**👨‍💻 투입인원** : 1명
 
-📒 주요기능
+**📒 주요기능**
 
 - 사용자 등록
 - 내역 등록
 - 계산서 출력
 
-🌱 스킬 및 사용툴
+🌱 **스킬 및 사용툴**
 
-HTML SCSS VSCode  React JavaScript
+`React` `HTML` `SCSS` `JavaScript` `VSCode`
 
 
-
-구현
+## 구현
 
 - Router와 useNavigate을 사용하여 페이지 전환
 - Hook의 useState, useCallback을 활용하여 컨포넌트 상태관리
