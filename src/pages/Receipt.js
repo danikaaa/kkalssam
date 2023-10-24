@@ -27,12 +27,12 @@ const Receipt = () => {
             name: user.name,
             products: userContents.map(content => ({
                 product: content.product,
-                price: content.price / content.users.length, // contents의 price를 users.length로 나눠줌
+                price: content.price / content.users.length.toFixed(2), // contents의 price를 users.length로 나눠줌
                 })),
             };
 
             // 각 사용자의 products의 가격을 모두 더한 값
-            const totalPrice = userData.products.reduce((total, product) => total + product.price, 0);
+            const totalPrice = userData.products.reduce((total, product) => total + product.price, 0).toFixed(2);
 
             userData.totalPrice = totalPrice;
       
