@@ -10,11 +10,13 @@ const UserList = ({ users, onUserInsert }) => {
 
     const userAdd = useCallback(() => {
 
+        // 예외처리
         if(document.getElementById('username').value === ''){
             alert('사용자를 입력하세요.');
         }else{
             onUserInsert(username);
             setUsername('');
+            document.getElementById('username').value = '';
         }
 
         

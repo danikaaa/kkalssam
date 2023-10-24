@@ -27,7 +27,7 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
     
     const contentAdd = useCallback(e => {
     
-        console.log(value.users.length);
+        // 예외처리
         if(document.getElementById('product').value === ''){
             alert("내역을 입력하세요.");
         }else if(document.getElementById('price').value === ''){
@@ -38,7 +38,10 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
             onContentInsert(value);
             setValue(initialFormState); // 초기 상태로 리셋
             e.preventDefault(); // 새로고침 방지용
-    
+            document.getElementById('product').value = '';
+            document.getElementById('price').value ='';
+            console.log(value);
+
         }
         
     }, [onContentInsert, value]);
@@ -52,6 +55,8 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
                 ...prevValue,
                 users: [...prevValue.users, value],
             }));
+
+
         } else {
             setValue(prevValue => ({
                 ...prevValue,
@@ -91,7 +96,7 @@ const ContentList = ({contents, userlist, onContentInsert}) => {
                         <input type="text" name="price" id="price" placeholder="ex) 4000" onChange={onChange}></input><span className="text_won">원</span>
                     </div>
                     <div className="sub_content_list">
-                        <ul className="user_ul">{userlist.map(user => (<li className="user-icon" key={user.idx}><input type="checkbox" name="users" value={user.name} id={user.idx} onChange={handleUserCheckboxChange}/><label htmlFor={user.idx}>{user.name}</label></li>))}</ul>
+                        <ul className="user_ul">{userlist.map(user => (<li className="user-icon" key={user.idx}><input type="checkbox" name="users" value={user.name} id={user.idx} onChange={handleUserCheckboxChange} checked={user.checked}/><label htmlFor={user.idx}>{user.name}</label></li>))}</ul>
                     </div>
                     <div className="add_btn" onClick={contentAdd}>추가</div>
                 </div>
