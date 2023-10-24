@@ -41,3 +41,7 @@
 - Hook의 useState, useCallback을 활용하여 컨포넌트 상태관리
 - 반응형으로 편리한 UI/UX
 
+
+<img src="https://github.com/danikaaa/kkalssam/assets/82324322/61ac597d-3971-46ed-a040-0d85189f1748" width="250" />
+<img src="https://github.com/danikaaa/kkalssam/assets/82324322/fbe526e8-d441-43bd-8404-37f4d50a5cac" width="280" />
+
